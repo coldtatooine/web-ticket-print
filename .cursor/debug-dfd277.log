@@ -353,3 +353,30 @@
 {"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782935731076}
 {"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782935731077}
 {"sessionId":"dfd277","location":"usePrinter.ts:visibilitychange","message":"tab visibility changed","data":{"visibilityState":"visible","hidden":false,"connected":false},"hypothesisId":"D","timestamp":1782936047027}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936677086}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782936677087}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936677088}
+{"sessionId":"dfd277","location":"usePrinter.ts:visibilitychange","message":"tab visibility changed","data":{"visibilityState":"hidden","hidden":true,"connected":false},"hypothesisId":"D","timestamp":1782936704955}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936812913}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936812914}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782936812914}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936921465}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936921466}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782936921466}
+{"sessionId":"dfd277","location":"usePrinter.ts:visibilitychange","message":"tab visibility changed","data":{"visibilityState":"hidden","hidden":true,"connected":false},"hypothesisId":"D","timestamp":1782936934325}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936938870}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782936938871}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936938872}
+{"sessionId":"dfd277","location":"usePrinter.ts:visibilitychange","message":"tab visibility changed","data":{"visibilityState":"hidden","hidden":true,"connected":false},"hypothesisId":"D","timestamp":1782936944067}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936944904}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782936944905}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782936944906}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782937004582}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782937004637}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782937004638}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782937004640}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782937051941}
+{"sessionId":"dfd277","location":"usePrinter.ts:unmount","message":"usePrinter unmounting, handlers cleared","data":{"connected":false},"hypothesisId":"C","timestamp":1782937051943}
+{"sessionId":"dfd277","location":"usePrinter.ts:mount","message":"usePrinter mounted, handlers registered","data":{},"hypothesisId":"C","timestamp":1782937051944}
+{"sessionId":"dfd277","location":"usePrinter.ts:visibilitychange","message":"tab visibility changed","data":{"visibilityState":"hidden","hidden":true,"connected":false},"hypothesisId":"D","timestamp":1782937063065}
+{"sessionId":"dfd277","location":"usePrinter.ts:visibilitychange","message":"tab visibility changed","data":{"visibilityState":"visible","hidden":false,"connected":false},"hypothesisId":"D","timestamp":1782937064074}

@@ -90,6 +90,16 @@ export const esMXCopy: Copy = {
     description:
       "Envía preguntas y comentarios para impresión térmica en vivo — directo del navegador.",
   },
+  notFound: {
+    meta: {
+      title: "404 — Página no encontrada",
+    },
+    title: "Página no encontrada",
+    description:
+      "Esta ruta no existe. La capibara tampoco sabe a dónde querías llegar.",
+    imageAlt: "Capibara mirando sin entender nada",
+    homeLink: "Volver al inicio",
+  },
   credit: {
     meta: {
       title: "Ticket de crédito · Cursor",

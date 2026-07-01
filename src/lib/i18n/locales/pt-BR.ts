@@ -90,6 +90,16 @@ export const ptBRCopy: Copy = {
     description:
       "Envie perguntas e comentários para impressão térmica ao vivo — direto do navegador.",
   },
+  notFound: {
+    meta: {
+      title: "404 — Página não encontrada",
+    },
+    title: "Página não encontrada",
+    description:
+      "Essa rota não existe. A capivara também não sabe onde você queria chegar.",
+    imageAlt: "Capivara olhando sem entender nada",
+    homeLink: "Voltar para a home",
+  },
   credit: {
     meta: {
       title: "Ticket de crédito · Cursor",

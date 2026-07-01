@@ -66,7 +66,7 @@ export function CreditTicketApp() {
   } = usePrinter();
 
   async function handleLogout() {
-    await fetch("/api/credito/auth", { method: "DELETE" });
+    await fetch("/api/credit/auth", { method: "DELETE" });
     window.location.reload();
   }
 

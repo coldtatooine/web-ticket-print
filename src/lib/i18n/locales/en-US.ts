@@ -90,6 +90,16 @@ export const enUSCopy: Copy = {
     description:
       "Send questions and comments for live thermal printing — straight from the browser.",
   },
+  notFound: {
+    meta: {
+      title: "404 — Page not found",
+    },
+    title: "Page not found",
+    description:
+      "This route doesn't exist. The capybara doesn't know where you were trying to go either.",
+    imageAlt: "Capybara staring in confusion",
+    homeLink: "Back to home",
+  },
   credit: {
     meta: {
       title: "Credit ticket · Cursor",

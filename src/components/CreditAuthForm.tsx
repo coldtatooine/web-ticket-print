@@ -32,7 +32,7 @@ export function CreditAuthForm({ notConfigured = false }: CreditAuthFormProps) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/credito/auth", {
+      const response = await fetch("/api/credit/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password }),

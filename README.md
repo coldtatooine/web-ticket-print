@@ -17,7 +17,7 @@ Two modules are available:
 | Route | Purpose | Access |
 |-------|---------|--------|
 | `/` | Live Q&A tickets (name, question/comment, timestamp) | Public |
-| `/credito` | Credit vouchers with event name, QR code, redemption URL, and batch link import | Password-protected |
+| `/credit` | Credit vouchers with event name, QR code, redemption URL, and batch link import | Password-protected |
 
 Printing runs entirely in the browser via the [Point of Sale](https://github.com/NielsLeenheer/ReceiptPrinterEncoder) Web API drivers — no native print server required.
 
@@ -25,8 +25,8 @@ Printing runs entirely in the browser via the [Point of Sale](https://github.com
 
 - **Question tickets** — Name, question/comment, date/time, and Cursor brand logo on 57/58mm paper (~32 columns).
 - **Credit tickets** — Event name, QR code, and printable URL for credit redemption.
-- **Batch import (`/credito`)** — Import credit links from CSV, XLS, or XLSX; two-column UI with ticket list and print form; print status tracking persisted in the browser.
-- **Event registry (`/credito`)** — Saved event names in `localStorage`; dropdown in the form after the first successful print.
+- **Batch import (`/credit`)** — Import credit links from CSV, XLS, or XLSX; two-column UI with ticket list and print form; print status tracking persisted in the browser.
+- **Event registry (`/credit`)** — Saved event names in `localStorage`; dropdown in the form after the first successful print.
 - **Printer connections** — USB, Bluetooth (BLE), and Serial (COM port / paired Bluetooth Classic).
 - **ESC/POS encoding** — Uses `@point-of-sale/receipt-printer-encoder` with automatic language/codepage detection from the printer driver.
 - **Requirements help** — In-app dialog with browser and hardware prerequisites.
@@ -78,19 +78,19 @@ npm install
 Create a `.env` file in the project root (not committed — see `.gitignore`):
 
 ```env
-# Required to enable the /credito module
+# Required to enable the /credit module
 CREDIT_MODULE_PASSWORD=your-secure-password
 ```
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `CREDIT_MODULE_PASSWORD` | For `/credito` only | Password for the credit ticket module. If unset, `/credito` shows a “module unavailable” message. |
+| `CREDIT_MODULE_PASSWORD` | For `/credit` only | Password for the credit ticket module. If unset, `/credit` shows a “module unavailable” message. |
 
 **Notes:**
 
 - If the password contains `$`, escape it in `.env`: `\$`
 - Session cookies last **8 hours** after successful login.
-- Auth API: `POST /api/credito/auth` (login), `DELETE /api/credito/auth` (logout).
+- Auth API: `POST /api/credit/auth` (login), `DELETE /api/credit/auth` (logout).
 
 There is no `.env.example` in the repository; copy the snippet above.
 
@@ -113,9 +113,9 @@ Both `dev` and `build` use the `--webpack` flag (required for Point of Sale prin
 4. Approve the browser device picker and confirm the connection
 5. Fill in the form and click **Imprimir!** (Print)
 
-For credit tickets, go to [http://localhost:3000/credito](http://localhost:3000/credito), enter the module password, then use the batch workflow below.
+For credit tickets, go to [http://localhost:3000/credit](http://localhost:3000/credit), enter the module password, then use the batch workflow below.
 
-#### Credit module workflow (`/credito`)
+#### Credit module workflow (`/credit`)
 
 The credit screen uses a **two-column layout**:
 
@@ -137,9 +137,9 @@ The credit screen uses a **two-column layout**:
 Primary use case: **one column, no header** — one `http://` or `https://` URL per row:
 
 ```text
-https://credito.example.com/ticket/1
-https://credito.example.com/ticket/2
-https://credito.example.com/ticket/3
+https://credit.example.com/ticket/1
+https://credit.example.com/ticket/2
+https://credit.example.com/ticket/3
 ```
 
 Also supported (optional):
@@ -168,7 +168,7 @@ npm run start
 Deploy to any Node.js host (e.g. Vercel). Ensure:
 
 - HTTPS is enabled (required for Web USB / Bluetooth / Serial outside localhost).
-- `CREDIT_MODULE_PASSWORD` is set in the hosting environment if you use `/credito`.
+- `CREDIT_MODULE_PASSWORD` is set in the hosting environment if you use `/credit`.
 
 ### Internationalization (i18n)
 
@@ -181,13 +181,13 @@ Locale infrastructure lives under `src/lib/i18n/`:
 | `es-MX` | Available |
 | `zh-CN` | Available |
 
-The UI uses `LocaleProvider` (`src/contexts/LocaleContext.tsx`) and the `useCopy()` hook. The language selector appears in the top-right toolbar (before the printer icon, separated by a divider) on `/` and `/credito`. Preference is persisted in `localStorage` under `LOCALE_STORAGE_KEY` (`web-ticket-print-locale`). The credit module additionally stores imported tickets and event names under `web-ticket-print-credit-tickets` and `web-ticket-print-credit-events` (see [Credit module workflow](#credit-module-workflow-credito)). Server metadata and API error fallbacks still use the default locale (`pt-BR`) via `src/lib/copy.ts`.
+The UI uses `LocaleProvider` (`src/contexts/LocaleContext.tsx`) and the `useCopy()` hook. The language selector appears in the top-right toolbar (before the printer icon, separated by a divider) on `/` and `/credit`. Preference is persisted in `localStorage` under `LOCALE_STORAGE_KEY` (`web-ticket-print-locale`). The credit module additionally stores imported tickets and event names under `web-ticket-print-credit-tickets` and `web-ticket-print-credit-events` (see [Credit module workflow](#credit-module-workflow-credit)). Server metadata and API error fallbacks still use the default locale (`pt-BR`) via `src/lib/copy.ts`.
 
 ### Project structure
 
 ```
 src/
-├── app/                    # Next.js routes (/, /credito, API)
+├── app/                    # Next.js routes (/, /credit, API)
 ├── components/             # React UI (forms, printer panel, auth, CreditTicketList)
 ├── hooks/                  # usePrinter, useCreditStorage
 ├── lib/
@@ -223,7 +223,7 @@ Dois módulos estão disponíveis:
 | Rota | Função | Acesso |
 |------|--------|--------|
 | `/` | Tickets de perguntas (nome, pergunta/comentário, data/hora) | Público |
-| `/credito` | Vouchers de crédito com nome do evento, QR code, URL de resgate e importação em lote de links | Protegido por senha |
+| `/credit` | Vouchers de crédito com nome do evento, QR code, URL de resgate e importação em lote de links | Protegido por senha |
 
 A impressão ocorre inteiramente no navegador, via drivers Web da biblioteca [Point of Sale](https://github.com/NielsLeenheer/ReceiptPrinterEncoder) — sem servidor de impressão nativo.
 
@@ -231,8 +231,8 @@ A impressão ocorre inteiramente no navegador, via drivers Web da biblioteca [Po
 
 - **Tickets de perguntas** — Nome, pergunta/comentário, data/hora e logo Cursor em papel 57/58mm (~32 colunas).
 - **Tickets de crédito** — Nome do evento, QR code e URL imprimível para resgate de crédito.
-- **Importação em lote (`/credito`)** — Importar links de CSV, XLS ou XLSX; interface em duas colunas (lista + formulário); status de impressão persistido no navegador.
-- **Cadastro de eventos (`/credito`)** — Nomes de evento salvos no `localStorage`; dropdown no formulário após a primeira impressão bem-sucedida.
+- **Importação em lote (`/credit`)** — Importar links de CSV, XLS ou XLSX; interface em duas colunas (lista + formulário); status de impressão persistido no navegador.
+- **Cadastro de eventos (`/credit`)** — Nomes de evento salvos no `localStorage`; dropdown no formulário após a primeira impressão bem-sucedida.
 - **Conexões** — USB, Bluetooth (BLE) e Serial (porta COM / Bluetooth Classic emparelhado).
 - **Codificação ESC/POS** — `@point-of-sale/receipt-printer-encoder` com detecção automática de language/codepage do driver.
 - **Ajuda de requisitos** — Diálogo in-app com pré-requisitos de navegador e hardware.
@@ -284,19 +284,19 @@ npm install
 Crie um arquivo `.env` na raiz do projeto (não versionado — ver `.gitignore`):
 
 ```env
-# Obrigatório para habilitar o módulo /credito
+# Obrigatório para habilitar o módulo /credit
 CREDIT_MODULE_PASSWORD=sua-senha-segura
 ```
 
 | Variável | Obrigatória | Descrição |
 |----------|-------------|-----------|
-| `CREDIT_MODULE_PASSWORD` | Apenas para `/credito` | Senha do módulo de tickets de crédito. Sem ela, `/credito` exibe mensagem de módulo indisponível. |
+| `CREDIT_MODULE_PASSWORD` | Apenas para `/credit` | Senha do módulo de tickets de crédito. Sem ela, `/credit` exibe mensagem de módulo indisponível. |
 
 **Observações:**
 
 - Se a senha contiver `$`, escape no `.env`: `\$`
 - Cookie de sessão válido por **8 horas** após login.
-- API de auth: `POST /api/credito/auth` (entrar), `DELETE /api/credito/auth` (sair).
+- API de auth: `POST /api/credit/auth` (entrar), `DELETE /api/credit/auth` (sair).
 
 Não há `.env.example` no repositório; use o snippet acima.
 
@@ -319,9 +319,9 @@ npm run lint     # ESLint
 4. Aprove o seletor de dispositivo do navegador e confirme a conexão
 5. Preencha o formulário e clique em **Imprimir!**
 
-Para tickets de crédito, acesse [http://localhost:3000/credito](http://localhost:3000/credito), informe a senha do módulo e siga o fluxo em lote abaixo.
+Para tickets de crédito, acesse [http://localhost:3000/credit](http://localhost:3000/credit), informe a senha do módulo e siga o fluxo em lote abaixo.
 
-#### Fluxo do módulo de crédito (`/credito`)
+#### Fluxo do módulo de crédito (`/credit`)
 
 A tela de crédito usa **layout em duas colunas**:
 
@@ -343,9 +343,9 @@ A tela de crédito usa **layout em duas colunas**:
 Caso principal: **uma coluna, sem cabeçalho** — uma URL `http://` ou `https://` por linha:
 
 ```text
-https://credito.example.com/ticket/1
-https://credito.example.com/ticket/2
-https://credito.example.com/ticket/3
+https://credit.example.com/ticket/1
+https://credit.example.com/ticket/2
+https://credit.example.com/ticket/3
 ```
 
 Também suportado (opcional):
@@ -374,7 +374,7 @@ npm run start
 Faça deploy em qualquer host Node.js (ex.: Vercel). Garanta:
 
 - HTTPS habilitado (obrigatório para Web USB / Bluetooth / Serial fora de localhost).
-- `CREDIT_MODULE_PASSWORD` configurada no ambiente se usar `/credito`.
+- `CREDIT_MODULE_PASSWORD` configurada no ambiente se usar `/credit`.
 
 ### Internacionalização (i18n)
 
@@ -387,13 +387,13 @@ A infraestrutura de locales fica em `src/lib/i18n/`:
 | `es-MX` | Disponível |
 | `zh-CN` | Disponível |
 
-A UI usa `LocaleProvider` (`src/contexts/LocaleContext.tsx`) e o hook `useCopy()`. O seletor de idioma fica na barra superior direita (antes do ícone da impressora, com divisor) em `/` e `/credito`. A preferência é salva no `localStorage` em `LOCALE_STORAGE_KEY` (`web-ticket-print-locale`). O módulo de crédito também persiste tickets importados e nomes de evento em `web-ticket-print-credit-tickets` e `web-ticket-print-credit-events` (ver [Fluxo do módulo de crédito](#fluxo-do-módulo-de-crédito-credito)). Metadados do servidor e fallbacks da API continuam no locale padrão (`pt-BR`) via `src/lib/copy.ts`.
+A UI usa `LocaleProvider` (`src/contexts/LocaleContext.tsx`) e o hook `useCopy()`. O seletor de idioma fica na barra superior direita (antes do ícone da impressora, com divisor) em `/` e `/credit`. A preferência é salva no `localStorage` em `LOCALE_STORAGE_KEY` (`web-ticket-print-locale`). O módulo de crédito também persiste tickets importados e nomes de evento em `web-ticket-print-credit-tickets` e `web-ticket-print-credit-events` (ver [Fluxo do módulo de crédito](#fluxo-do-módulo-de-crédito-credit)). Metadados do servidor e fallbacks da API continuam no locale padrão (`pt-BR`) via `src/lib/copy.ts`.
 
 ### Estrutura do projeto
 
 ```
 src/
-├── app/                    # Rotas Next.js (/, /credito, API)
+├── app/                    # Rotas Next.js (/, /credit, API)
 ├── components/             # UI React (formulários, painel da impressora, auth, CreditTicketList)
 ├── hooks/                  # usePrinter, useCreditStorage
 ├── lib/

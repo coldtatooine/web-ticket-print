@@ -88,6 +88,15 @@ export const zhCNCopy: Copy = {
     title: "纸上提问 · Cursor",
     description: "在浏览器中发送问题和评论，实时热敏打印。",
   },
+  notFound: {
+    meta: {
+      title: "404 — 页面未找到",
+    },
+    title: "页面未找到",
+    description: "此路由不存在。水豚也不知道你想去哪里。",
+    imageAlt: "一脸茫然的水豚",
+    homeLink: "返回首页",
+  },
   credit: {
     meta: {
       title: "积分小票 · Cursor",

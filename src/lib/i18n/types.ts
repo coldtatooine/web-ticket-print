@@ -70,6 +70,15 @@ export interface Copy {
     title: string;
     description: string;
   };
+  notFound: {
+    meta: {
+      title: string;
+    };
+    title: string;
+    description: string;
+    imageAlt: string;
+    homeLink: string;
+  };
   credit: {
     meta: {
       title: string;
