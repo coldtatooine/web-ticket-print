@@ -1,0 +1,38 @@
+{
+  "name": "web-ticket-print",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@gogogo/design-system": "file:packages/design-system",
+    "@point-of-sale/receipt-printer-encoder": "^3.0.3",
+    "@point-of-sale/webbluetooth-receipt-printer": "^2.0.0",
+    "@point-of-sale/webserial-receipt-printer": "^2.0.0",
+    "@point-of-sale/webusb-receipt-printer": "^2.0.0",
+    "@radix-ui/react-label": "^2.1.11",
+    "@radix-ui/react-slot": "^1.3.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "^3.6.0",
+    "web-ticket-print": "file:",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

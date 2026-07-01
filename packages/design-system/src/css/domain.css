@@ -1,0 +1,122 @@
+/**
+ * Gogogo! — extensões de domínio sobre neobrutalism v4
+ * Status operacional, tela do salão e tipografia de marca.
+ */
+
+:root {
+  /* Status operacional (PRD seção 4.3) */
+  --gg-color-status-waiting: #ffd60a;
+  --gg-color-status-waiting-bg: #fff8cc;
+  --gg-color-status-progress: #1b6ef3;
+  --gg-color-status-progress-bg: #e8f0fe;
+  --gg-color-status-alert: #ff6b00;
+  --gg-color-status-alert-bg: #fff0e6;
+  --gg-color-status-critical: #e11d1d;
+  --gg-color-status-critical-bg: #feecec;
+  --gg-color-status-done: #16a34a;
+  --gg-color-status-done-bg: #dcfce7;
+  --gg-color-status-rejected: #6b7280;
+  --gg-color-status-rejected-bg: #f3f4f6;
+
+  /* Tela do salão — tema escuro (PRD seção 4.2) */
+  --gg-color-dark-bg: #0f0f0f;
+  --gg-color-dark-surface: #1a1a1a;
+  --gg-color-dark-border: #2e2e2e;
+  --gg-color-dark-text: #f5f5f0;
+  --gg-color-dark-primary: #ffd60a;
+
+  /* Tipografia salão */
+  --gg-font-size-salao-status: 3rem;
+  --gg-font-size-salao-ordem: 2.25rem;
+  --gg-font-size-salao-descricao: 1.5rem;
+  --gg-font-size-salao-tecnico: 1.25rem;
+  --gg-font-size-salao-timer: 4.5rem;
+
+  /* Landing page — paleta candy (inspiração Chorke, harmonizada com marca) */
+  --gg-lp-yellow: #ffd60a;
+  --gg-lp-green: #22c55e;
+  --gg-lp-pink: #fbcfe8;
+  --gg-lp-blue: #dbeafe;
+  --gg-lp-lavender: #e9d5ff;
+  --gg-lp-gradient-hero: linear-gradient(
+    135deg,
+    var(--gg-lp-lavender) 0%,
+    var(--gg-lp-yellow) 100%
+  );
+}
+
+@theme inline {
+  --color-status-waiting: var(--gg-color-status-waiting);
+  --color-status-waiting-bg: var(--gg-color-status-waiting-bg);
+  --color-status-progress: var(--gg-color-status-progress);
+  --color-status-progress-bg: var(--gg-color-status-progress-bg);
+  --color-status-alert: var(--gg-color-status-alert);
+  --color-status-alert-bg: var(--gg-color-status-alert-bg);
+  --color-status-critical: var(--gg-color-status-critical);
+  --color-status-critical-bg: var(--gg-color-status-critical-bg);
+  --color-status-done: var(--gg-color-status-done);
+  --color-status-done-bg: var(--gg-color-status-done-bg);
+  --color-status-rejected: var(--gg-color-status-rejected);
+  --color-status-rejected-bg: var(--gg-color-status-rejected-bg);
+
+  --color-dark-bg: var(--gg-color-dark-bg);
+  --color-dark-surface: var(--gg-color-dark-surface);
+  --color-dark-border: var(--gg-color-dark-border);
+  --color-dark-text: var(--gg-color-dark-text);
+  --color-dark-primary: var(--gg-color-dark-primary);
+
+  --text-salao-status: var(--gg-font-size-salao-status);
+  --text-salao-ordem: var(--gg-font-size-salao-ordem);
+  --text-salao-descricao: var(--gg-font-size-salao-descricao);
+  --text-salao-tecnico: var(--gg-font-size-salao-tecnico);
+  --text-salao-timer: var(--gg-font-size-salao-timer);
+
+  --font-heading: var(--gg-font-display);
+  --font-base: var(--gg-font-body);
+
+  --color-lp-yellow: var(--gg-lp-yellow);
+  --color-lp-green: var(--gg-lp-green);
+  --color-lp-pink: var(--gg-lp-pink);
+  --color-lp-blue: var(--gg-lp-blue);
+  --color-lp-lavender: var(--gg-lp-lavender);
+}
+
+/* Tema isolado da tela do salão */
+.theme-salao {
+  --background: var(--gg-color-dark-bg);
+  --secondary-background: var(--gg-color-dark-surface);
+  --foreground: var(--gg-color-dark-text);
+  --main: var(--gg-color-dark-primary);
+  --main-foreground: #0a0a0a;
+  --border: var(--gg-color-dark-border);
+  --shadow: 4px 4px 0px var(--gg-color-dark-primary);
+
+  /* Badges — pares AAA (≥7:1) para kiosk (DS §9.1 / §11.1) */
+  --gg-color-status-waiting: #0a0a0a;
+  --gg-color-status-waiting-bg: #ffd60a;
+  --gg-color-status-progress: #0a0a0a;
+  --gg-color-status-progress-bg: #e8f0fe;
+  --gg-color-status-alert: #0a0a0a;
+  --gg-color-status-alert-bg: #ff6b00;
+  --gg-color-status-critical: #fafaf5;
+  --gg-color-status-critical-bg: #b91c1c;
+  --gg-color-status-done: #0a0a0a;
+  --gg-color-status-done-bg: #dcfce7;
+  --gg-color-status-rejected: #0a0a0a;
+  --gg-color-status-rejected-bg: #e5e7eb;
+}
+
+.theme-salao article.border-status-critical {
+  border-color: #e11d1d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
